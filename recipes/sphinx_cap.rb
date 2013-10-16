@@ -8,15 +8,15 @@ namespace :sphinx do
   end
 
   task :index, :roles => [:sphinx] do
-    run "rake -f #{current_path}/Rakefile ts:in RAILS_ENV=#{fetch(:rails_env, 'production')}"
+    run "rake -f #{current_path}/Rakefile ts:index RAILS_ENV=#{fetch(:rails_env, 'production')}"
   end
 
   task :index_only, :roles => [:sphinx] do
-    run "rake -f #{current_path}/Rakefile ts:in INDEX_ONLY=true RAILS_ENV=#{fetch(:rails_env, 'production')}"
+    run "rake -f #{current_path}/Rakefile ts:index INDEX_ONLY=true RAILS_ENV=#{fetch(:rails_env, 'production')}"
   end
 
   task :configure, :roles => [:sphinx] do
-    run "rake -f #{current_path}/Rakefile ts:config RAILS_ENV=#{fetch(:rails_env, 'production')}"
+    run "rake -f #{current_path}/Rakefile ts:configure RAILS_ENV=#{fetch(:rails_env, 'production')}"
   end
 
   desc "Reconfigures sphinx, and then restarts"
