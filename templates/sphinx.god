@@ -29,7 +29,7 @@ God.watch do |w|
 
   w.restart_if do |restart|
     restart.condition(:memory_usage) do |c|
-      c.above = 100.megabytes
+      c.above = 1501.megabytes
       c.times = [3, 5] # 3 out of 5 intervals
 <% if configuration[:sphinx][:god] && configuration[:sphinx][:god][:restart_notify] %>
       c.notify = "<%= configuration[:sphinx][:god][:restart_notify] %>"
